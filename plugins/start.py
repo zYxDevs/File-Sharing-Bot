@@ -14,9 +14,9 @@ from database.sql import add_user, query_msg
 
 #=====================================================================================##
 
-USERS_LIST = """<b>⭕️Total:</b>\n\n⭕️Subscribers - {}\n⭕️Blocked- {}"""
+USERS_LIST = """<b>🧑‍💻 Total:</b>\n\n✅ Subscribers - {}\n❌ Blocked- {}"""
 
-WAIT_MSG = """"<b>Processing ...</b>"""
+WAIT_MSG = """<code>Processing...</code>"""
 
 REPLY_ERROR = """<code>Use this command as a replay to any telegram message with out any spaces.</code>"""
 
@@ -135,7 +135,7 @@ async def subscribers_count(bot, m: Message):
     messages = await users_info(bot)
     active = messages[0]
     blocked = messages[1]
-    await m.delete()
+#    await m.delete()
     await msg.edit(USERS_LIST.format(active, blocked))
 
 
