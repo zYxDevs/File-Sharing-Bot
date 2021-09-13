@@ -126,7 +126,7 @@ async def not_joined(client: Client, message: Message):
         disable_web_page_preview = True
     )
 
-@Bot.on_message(filters.private & filters.command('users'))
+@Bot.on_message(filters.command('users')) #& filters.private)
 async def subscribers_count(bot, m: Message):
     id = m.from_user.id
     if id not in ADMINS:
