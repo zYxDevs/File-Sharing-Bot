@@ -113,7 +113,7 @@ async def start_command(client: Client, message: Message):
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
     message_text = message.text
-    argument = message_text.replace("/start", "")
+    argument = message_text.replace("/start", "https://t.me/FileLinkerBot?start=")
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Join Channel", url = client.invitelink)]])
 #    argument = message_text.split("=", 1)[1]
     cobalagi = f"[Coba lagi]({argument})"
