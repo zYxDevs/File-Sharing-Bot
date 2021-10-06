@@ -114,7 +114,7 @@ async def start_command(client: Client, message: Message):
 async def not_joined(client: Client, message: Message):
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Join Channel", url = client.invitelink)]])
     message_text = message.text
-    argument = message_text.split()
+    argument = message_text.split('=', 1)[1]
     cobalagi = f"[Coba lagi](https://t.me/FileLinkerBot?start={argument})"
     await message.reply(
         text = FORCE_MSG.format(
