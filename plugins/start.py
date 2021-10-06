@@ -115,8 +115,8 @@ async def not_joined(client: Client, message: Message):
     message_text = message.text
     argument = message_text.replace("/start", "")
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("Join Channel", url = client.invitelink)]])
-    argument = message_text.split("=", 1)[1]
-#    cobalagi = f"[Coba lagi]({argument})"
+#    argument = message_text.split("=", 1)[1]
+    cobalagi = f"[Coba lagi]({argument})"
     await message.reply(
         text = FORCE_MSG.format(
                 first = message.from_user.first_name,
