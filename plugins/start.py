@@ -128,8 +128,7 @@ async def not_joined(client: Client, message: Message):
             ),
         reply_markup = reply_markup,
         quote = True,
-        disable_web_page_preview = True,
-        parse_mode = "markdown"
+        disable_web_page_preview = True
     )
 
 @Bot.on_message(filters.command('users')) #& filters.private)
