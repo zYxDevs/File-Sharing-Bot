@@ -111,6 +111,9 @@ async def start_command(client: Client, message: Message):
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
+    argumen = message_text.replace("/start ", "https://t.me/FileLinkerBot?start=")
+    argument = argumen.replace("/start", "https://t.me/FileLinkerBot?start")
+    cobalagi = f"[Coba lagi]({argument})"
     buttons = [
         [
             InlineKeyboardButton(
@@ -134,6 +137,7 @@ async def not_joined(client: Client, message: Message):
         text = FORCE_MSG.format(
                 first = message.from_user.first_name,
                 last = message.from_user.last_name,
+                coba = cobalagi,
                 username = None if not message.from_user.username else '@' + message.from_user.username,
                 mention = message.from_user.mention,
                 id = message.from_user.id
