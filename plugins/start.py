@@ -111,6 +111,7 @@ async def start_command(client: Client, message: Message):
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def not_joined(client: Client, message: Message):
+    message_text = message.text
     argumen = message_text.replace("/start ", "https://t.me/FileLinkerBot?start=")
     argument = argumen.replace("/start", "https://t.me/FileLinkerBot?start")
     cobalagi = f"[Coba lagi]({argument})"
