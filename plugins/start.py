@@ -145,6 +145,7 @@ async def not_joined(client: Client, message: Message):
             ),
         reply_markup = InlineKeyboardMarkup(buttons),
         quote = True,
+        parse_mode = "markdown"
         disable_web_page_preview = True
     )
 
